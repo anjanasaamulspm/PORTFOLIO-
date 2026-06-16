@@ -244,7 +244,9 @@
         <h2>What I'd do differently</h2>
         <div class="placeholder">
           <div class="placeholder-label">✏ Edit this section</div>
-          <p>What assumptions would you validate first? What would change with more data? Biggest risk in your proposal and how you'd mitigate it?</p>
+          <p>The biggest assumption baked into this product is that users trust AI-generated resume content enough to submit it. That might not be true for everyone — some users will want to edit heavily, some will want a "diff view" showing what changed and why. A V1.5 feature worth considering: show the original bullet alongside the rewritten one, so users can choose rather than just accept.
+The three-LLM architecture is also a latency risk. Chaining three models sequentially adds up. Worth exploring whether LLM 1 (the reader/extractor) can be replaced with a structured parsing layer rather than a full generation call — faster, cheaper, and more reliable for extraction tasks.
+The login + history feature sounds like a retention play but is actually a trust play. Users will only save their resumes somewhere if they trust the platform with their career data. That trust has to be earned through output quality first. Build the history feature when users ask for it — not before.</p>
         </div>
       </section>
 
