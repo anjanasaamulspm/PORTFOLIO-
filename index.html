@@ -3,436 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anjana — PM Case Studies</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #FAFAF8;
-    --ink: #1A1A1A;
-    --ink-soft: #5C5C57;
-    --accent: #2D5F4F;
-    --accent-soft: #E4ECE8;
-    --brown: #8B6F47;
-    --border: #E8E4DC;
-    --card-bg: #FFFFFF;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* HEADER */
-  header {
-    padding: 80px 0 56px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-  }
-
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: clamp(36px, 6vw, 56px);
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    margin-bottom: 20px;
-  }
-
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .lede {
-    font-size: 17px;
-    color: var(--ink-soft);
-    max-width: 540px;
-    margin-bottom: 28px;
-  }
-
-  .meta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px;
-  }
-
-  .meta-tag {
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 6px 14px;
-    color: var(--ink-soft);
-    background: var(--card-bg);
-  }
-
-  .meta-tag a {
-    color: var(--ink-soft);
-    text-decoration: none;
-  }
-
-  .meta-tag a:hover {
-    color: var(--accent);
-  }
-
-  /* SECTION LABEL */
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    padding: 48px 0 24px;
-  }
-
-  /* CASE STUDY CARDS */
-  .cases {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding-bottom: 56px;
-  }
-
-  .case-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 28px 28px 26px;
-    text-decoration: none;
-    color: var(--ink);
-    display: block;
-    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-  }
-
-  .case-card:hover,
-  .case-card:focus-visible {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px -12px rgba(45, 95, 79, 0.25);
-    outline: none;
-  }
-
-  .case-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 12px;
-  }
-
-  .case-id {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--ink-soft);
-    letter-spacing: 0.04em;
-  }
-
-  .status {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 100px;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .status.draft {
-    background: #F5F1E8;
-    color: var(--brown);
-  }
-
-  .status.live {
-    background: var(--accent-soft);
-    color: var(--accent);
-  }
-
-  .case-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 22px;
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-  }
-
-  .case-question {
-    color: var(--ink-soft);
-    font-size: 15px;
-    margin-bottom: 18px;
-    max-width: 520px;
-  }
-
-  .case-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding-top: 16px;
-    border-top: 1px dashed var(--border);
-  }
-
-  .case-frameworks {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .framework-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--ink-soft);
-    background: var(--bg);
-    border: 1px solid var(--border);
-    padding: 3px 9px;
-    border-radius: 5px;
-  }
-
-  .read-more {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--accent);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    white-space: nowrap;
-  }
-
-  .read-more svg {
-    transition: transform 0.2s ease;
-  }
-
-  .case-card:hover .read-more svg {
-    transform: translateX(3px);
-  }
-
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 36px 0 64px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px;
-    color: var(--ink-soft);
-  }
-
-  footer a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 600px) {
-    header { padding: 56px 0 40px; }
-    .case-card { padding: 22px; }
-    .case-bottom { align-items: flex-start; }
-  }
-
-  /* Reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    .case-card { transition: none; }
-    .case-card:hover { transform: none; }
-    .read-more svg { transition: none; }
-  }
-</style>
+<title>Anjana — PM Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <div class="wrap">
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">anjana.pm</a>
+    <div class="nav-links">
+      <!-- UPDATE: replace # with your LinkedIn URL -->
+      <a href="#">LinkedIn ↗</a>
+      <!-- UPDATE: replace with your real email -->
+      <a href="mailto:youremail@example.com">Contact</a>
+    </div>
+  </nav>
+</div>
 
-  <header>
-    <div class="eyebrow">Product case studies · India</div>
-    <h1>How I'd build it: <em>five reads</em> on Indian apps &amp; e-commerce</h1>
-    <p class="lede">
+<!-- ── HERO ── -->
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-eyebrow">Product case studies · India</div>
+    <h1>How I'd build it:<br><em>five reads</em> on Indian apps &amp; e-commerce</h1>
+    <p class="hero-lede">
       Each case study starts with one question I had as a user, then works through it the way I'd
       pitch it as a PM — problem framing, data, prioritization, and what I'd ship next.
     </p>
-    <div class="meta-row">
-      <span class="meta-tag">Anjana</span>
-      <span class="meta-tag">B.Tech Civil Engg · Management Minor, IIT Gandhinagar</span>
-      <span class="meta-tag"><a href="mailto:youremail@example.com">youremail@example.com</a></span>
+    <div class="hero-meta">
+      <span class="chip">Anjana</span>
+      <span class="chip">B.Tech Civil Engg · Management Minor, IIT Gandhinagar</span>
+      <span class="chip">Bengaluru</span>
+      <!-- UPDATE: replace with your real email -->
+      <span class="chip"><a href="mailto:youremail@example.com">youremail@example.com</a></span>
     </div>
-  </header>
+  </section>
 
-  <div class="section-label">Case studies — 01 to 05</div>
+  <!-- ── CASES ── -->
+  <div class="cases-label">Case studies</div>
 
-  <div class="cases">
+  <div class="cases-list">
 
-    <a href="#" class="case-card">
-      <div class="case-top">
-        <span class="case-id">CASE 01</span>
-        <span class="status live">Live</span>
+    <!-- CASE 01 -->
+    <a href="case-01.html" class="case-card" data-num="01">
+      <div class="card-top">
+        <span class="card-num">CASE 01</span>
+        <span class="badge live">Live</span>
       </div>
-      <h2 class="case-title">QR-code offers at checkout: a discovery problem in app-based ordering</h2>
-      <p class="case-question">
-        Why don't users see restaurant offers until they've already decided what to order —
-        and what would change if they did?
-      </p>
-      <div class="case-bottom">
-        <div class="case-frameworks">
-          <span class="framework-tag">JTBD</span>
-          <span class="framework-tag">RICE</span>
-          <span class="framework-tag">PR/FAQ</span>
+      <h2 class="card-title">QR-code offers at checkout: a discovery problem in app-based ordering</h2>
+      <p class="card-question">Why don't users see restaurant offers until they've already decided what to order — and what would change if they did?</p>
+      <div class="card-footer">
+        <div class="tags">
+          <span class="tag">JTBD</span>
+          <span class="tag">RICE</span>
+          <span class="tag">PR/FAQ</span>
         </div>
-        <span class="read-more">
-          Read case
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
+        <span class="card-cta">Read case →</span>
       </div>
     </a>
 
-    <a href="#" class="case-card">
-      <div class="case-top">
-        <span class="case-id">CASE 02</span>
-        <span class="status draft">In progress</span>
+    <!-- CASE 02 -->
+    <a href="case-02.html" class="case-card" data-num="02">
+      <div class="card-top">
+        <span class="card-num">CASE 02</span>
+        <span class="badge draft">In progress</span>
       </div>
-      <h2 class="case-title">A resume generator that actually reads the job description</h2>
-      <p class="case-question">
-        Most resume tools rewrite tone, not substance — what would it take to tailor a CV and
-        cover letter to what a specific JD is actually asking for?
-      </p>
-      <div class="case-bottom">
-        <div class="case-frameworks">
-          <span class="framework-tag">JTBD</span>
-          <span class="framework-tag">PR/FAQ</span>
-          <span class="framework-tag">MoSCoW</span>
+      <h2 class="card-title">A resume generator that actually reads the job description</h2>
+      <p class="card-question">Most resume tools rewrite tone, not substance — what would it take to tailor a CV and cover letter to what a specific JD is actually asking for?</p>
+      <div class="card-footer">
+        <div class="tags">
+          <span class="tag">JTBD</span>
+          <span class="tag">PR/FAQ</span>
+          <span class="tag">MoSCoW</span>
         </div>
-        <span class="read-more">
-          Coming soon
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
+        <span class="card-cta">Read case →</span>
       </div>
     </a>
 
-    <a href="#" class="case-card">
-      <div class="case-top">
-        <span class="case-id">CASE 03</span>
-        <span class="status draft">In progress</span>
+    <!-- CASE 03 -->
+    <a href="case-03.html" class="case-card" data-num="03">
+      <div class="card-top">
+        <span class="card-num">CASE 03</span>
+        <span class="badge draft">In progress</span>
       </div>
-      <h2 class="case-title">A fitness app that explains the "why" to first-timers</h2>
-      <p class="case-question">
-        Beginners don't lack exercise data — they lack a reason to trust it. What does a
-        BMI- and goal-aware workout plan look like when it's built on verified sources?
-      </p>
-      <div class="case-bottom">
-        <div class="case-frameworks">
-          <span class="framework-tag">Kano</span>
-          <span class="framework-tag">North Star</span>
-          <span class="framework-tag">A/B Testing</span>
+      <h2 class="card-title">A fitness app that explains the "why" to first-timers</h2>
+      <p class="card-question">Beginners don't lack exercise data — they lack a reason to trust it. What does a BMI- and goal-aware workout plan look like when it's built on verified sources?</p>
+      <div class="card-footer">
+        <div class="tags">
+          <span class="tag">Kano</span>
+          <span class="tag">North Star</span>
+          <span class="tag">A/B Testing</span>
         </div>
-        <span class="read-more">
-          Coming soon
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
+        <span class="card-cta">Read case →</span>
       </div>
     </a>
 
-    <a href="#" class="case-card">
-      <div class="case-top">
-        <span class="case-id">CASE 04</span>
-        <span class="status draft">In progress</span>
+    <!-- CASE 04 -->
+    <a href="case-04.html" class="case-card" data-num="04">
+      <div class="card-top">
+        <span class="card-num">CASE 04</span>
+        <span class="badge draft">In progress</span>
       </div>
-      <h2 class="case-title">Navi: lending made to feel like a utility, not a loan</h2>
-      <p class="case-question">
-        Navi strips lending down to its simplest form — what's the product bet behind that
-        simplicity, and where does it start to cost them?
-      </p>
-      <div class="case-bottom">
-        <div class="case-frameworks">
-          <span class="framework-tag">AARRR</span>
-          <span class="framework-tag">Double Diamond</span>
+      <h2 class="card-title">Navi: lending made to feel like a utility, not a loan</h2>
+      <p class="card-question">Navi strips lending down to its simplest form — what's the product bet behind that simplicity, and where does it start to cost them?</p>
+      <div class="card-footer">
+        <div class="tags">
+          <span class="tag">AARRR</span>
+          <span class="tag">Double Diamond</span>
         </div>
-        <span class="read-more">
-          Coming soon
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
+        <span class="card-cta">Read case →</span>
       </div>
     </a>
 
-    <a href="#" class="case-card">
-      <div class="case-top">
-        <span class="case-id">CASE 05</span>
-        <span class="status draft">In progress</span>
+    <!-- CASE 05 -->
+    <a href="case-05.html" class="case-card" data-num="05">
+      <div class="card-top">
+        <span class="card-num">CASE 05</span>
+        <span class="badge draft">In progress</span>
       </div>
-      <h2 class="case-title">Jar: turning round-off change into a savings habit</h2>
-      <p class="case-question">
-        Jar bets that micro-savings can become a daily habit — what does the activation and
-        retention loop need to look like for that bet to pay off?
-      </p>
-      <div class="case-bottom">
-        <div class="case-frameworks">
-          <span class="framework-tag">Hook Model</span>
-          <span class="framework-tag">OKRs</span>
+      <h2 class="card-title">Jar: turning round-off change into a savings habit</h2>
+      <p class="card-question">Jar bets that micro-savings can become a daily habit — what does the activation and retention loop need to look like for that bet to pay off?</p>
+      <div class="card-footer">
+        <div class="tags">
+          <span class="tag">Hook Model</span>
+          <span class="tag">OKRs</span>
         </div>
-        <span class="read-more">
-          Coming soon
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
+        <span class="card-cta">Read case →</span>
       </div>
     </a>
 
-  </div>
+  </div><!-- end cases-list -->
 
-  <footer>
+  <footer class="site-footer">
     <span>Bengaluru · 2026</span>
-    <a href="#">LinkedIn</a>
+    <!-- UPDATE: replace # with your LinkedIn URL -->
+    <a href="#">LinkedIn ↗</a>
   </footer>
-
 </div>
 
+<script src="portfolio.js"></script>
 </body>
 </html>
