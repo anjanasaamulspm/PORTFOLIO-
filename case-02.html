@@ -77,11 +77,14 @@
       <section class="cs-section" id="problem">
         <div class="cs-section-label">The problem</div>
         <h2>What I noticed as a user</h2>
-        <p><!-- EDIT: Describe the friction. Specific moment, specific pain. -->
-          Write your problem observation here. What were you doing when you noticed this? What was the friction point? Be specific.
+        <p>
+          People don't change jobs once — they change jobs many times. But most people only ever make one resume: the one they put together right after college, formatted in a hurry, saved as a PDF, and never properly revisited. Every time a new opportunity comes up, they dust off the same file, tweak a line or two, and hope for the best[cite: 1].
         </p>
-        <p><!-- EDIT: Add more context. Who else faces this? How often? -->
-          Add more context here. Who else faces this problem? How frequently?
+        <p>
+          The problem isn't laziness. It's that genuinely tailoring a resume to a specific job description is cognitively expensive — you have to read the JD carefully, identify what they're actually prioritizing, map your own experience to those signals, rewrite bullet points to reflect that mapping, and then do it all over again for the cover letter in a different register. Even with AI tools, most people paste their resume in, get back a slightly shinier version of what they already had, and still end up submitting something generic[cite: 1].
+        </p>
+        <p>
+          The gap isn't a writing tool. It's a thinking tool — something that does the analytical work of reading both documents and finding the honest overlap[cite: 1].
         </p>
 
         <!-- IMAGE ZONE -->
@@ -105,10 +108,17 @@
       <section class="cs-section" id="jtbd">
         <div class="cs-section-label">Who it's for</div>
         <h2>Jobs to be done</h2>
-        <div class="placeholder">
-          <div class="placeholder-label">✏ Edit this section</div>
-          <p>"When [situation], I want to [motivation], so I can [expected outcome]."<br><br>Cover 2–3 distinct user types or jobs if relevant.</p>
-        </div>
+        
+        <p><strong>User 1 — The mid-career switcher</strong><br>
+        When I'm applying for a role that's adjacent to but not identical to my current job, I want my existing experience reframed in the language the new industry uses, so I can get past the initial screening without misrepresenting myself[cite: 1].</p>
+        
+        <p><strong>User 2 — The early-career applicant</strong><br>
+        When I'm applying to multiple companies at once and each JD is slightly different, I want a version of my resume that emphasizes the right things for each one, so I'm not spending 3 hours per application just on formatting and rewriting[cite: 1].</p>
+        
+        <p><strong>User 3 — The returning professional</strong><br>
+        When I'm re-entering the workforce after a gap or career break, I want help presenting what I've done in a way that maps to current job market language, so my experience doesn't look irrelevant just because the vocabulary has changed[cite: 1].</p>
+        
+        <p><strong>Common thread:</strong> All three users have real experience. None of them have the time or confidence to translate it correctly for every specific opportunity. That's the job this product is hired to do[cite: 1].</p>
 
         <!-- IMAGE ZONE -->
         <div class="img-zone" data-key="c02-jtbd">
@@ -131,13 +141,17 @@
       <section class="cs-section" id="sizing">
         <div class="cs-section-label">Why it matters</div>
         <h2>Sizing the opportunity</h2>
-        <p><!-- EDIT: Market size, frequency, who gets hurt at scale -->
-          Write context about why this problem is worth solving at scale.
+        <p>
+          India alone has over 3 million active job seekers on LinkedIn at any given point, and globally, the resume writing services market is estimated at $6B+[cite: 1]. But the more relevant signal is behavioral: ChatGPT's most common use case, consistently reported in user surveys, is resume and cover letter writing — yet most users report being unsatisfied with the output because it's generic[cite: 1]. 
         </p>
+        <p>
+          The unmet need isn't "write me a resume." It's "help me match my specific background to this specific job without sounding like everyone else." That's a narrower, more solvable problem — and no current tool makes it the core product[cite: 1].
+        </p>
+        
         <div class="metrics-row">
-          <div class="metric-card"><div class="metric-value">—</div><div class="metric-label">Metric one</div></div>
-          <div class="metric-card"><div class="metric-value">—</div><div class="metric-label">Metric two</div></div>
-          <div class="metric-card"><div class="metric-value">—</div><div class="metric-label">Metric three</div></div>
+          <div class="metric-card"><div class="metric-value">3M+</div><div class="metric-label">Active Job Seekers in India</div></div>
+          <div class="metric-card"><div class="metric-value">$6B+</div><div class="metric-label">Global Resume Writing Market</div></div>
+          <div class="metric-card"><div class="metric-value">#1</div><div class="metric-label">ChatGPT Use Case (Generic Output Pain)</div></div>
         </div>
 
         <!-- IMAGE ZONE -->
@@ -161,10 +175,34 @@
       <section class="cs-section" id="prioritization">
         <div class="cs-section-label">Prioritization</div>
         <h2>What I'd build first, and why</h2>
-        <div class="placeholder">
-          <div class="placeholder-label">✏ Edit this section</div>
-          <p>Walk through RICE (Reach, Impact, Confidence, Effort). What did you deprioritize and why? MVP vs full vision?</p>
-        </div>
+        
+        <p><strong>What's in V1:</strong></p>
+        <ul>
+          <li>Upload resume as PDF, image, or plain text[cite: 1]</li>
+          <li>Paste JD as text[cite: 1]</li>
+          <li>Get tailored resume text output + cover letter text output[cite: 1]</li>
+          <li>Copy to clipboard[cite: 1]</li>
+        </ul>
+
+        <p><strong>Why V1 stays text-only:</strong><br>
+        PDF generation is a formatting problem that has nothing to do with the core value proposition. The job is to get the content right first. Most users will copy the text into their own template anyway — that's a feature, not a bug, because it lets them maintain their own formatting preferences[cite: 1].</p>
+
+        <p><strong>What's deprioritized (V2+):</strong></p>
+        <ul>
+          <li>PDF download with formatted output[cite: 1]</li>
+          <li>Login + history / saved resumes[cite: 1]</li>
+          <li>Model selection (let users choose between GPT-4, Gemini, Claude)[cite: 1]</li>
+          <li>ATS score checker[cite: 1]</li>
+          <li>LinkedIn profile sync[cite: 1]</li>
+        </ul>
+
+        <p><strong>RICE for V1 core feature (tailored resume text):</strong><br>
+        <strong>Reach:</strong> High — any job seeker with a resume and a JD[cite: 1]<br>
+        <strong>Impact:</strong> High — directly addresses the core pain[cite: 1]<br>
+        <strong>Confidence:</strong> High — pattern proven by ChatGPT usage data[cite: 1]<br>
+        <strong>Effort:</strong> Medium — three-LLM chain is technically non-trivial but well-understood[cite: 1]</p>
+
+        <p><strong>What to build last:</strong> Login and history. It sounds useful but it adds auth complexity, data storage costs, and privacy obligations before you've validated that people actually come back. Let them download/copy first. If they come back manually, that's your signal to build persistence[cite: 1].</p>
 
         <!-- IMAGE ZONE -->
         <div class="img-zone" data-key="c02-priority">
@@ -187,12 +225,25 @@
       <section class="cs-section" id="proposal">
         <div class="cs-section-label">The proposal</div>
         <h2>What I'd ship</h2>
-        <div class="placeholder">
-          <div class="placeholder-label">✏ Edit this section</div>
-          <p>Describe the feature or product change. PR/FAQ format if relevant: write a short press release as if it shipped. What problem does it solve? Who benefits?</p>
-        </div>
+        
+        <h3>Press release — as if it shipped:</h3>
+        <p><em>For immediate release</em></p>
+        <p><strong>ResumeMatch launches today, helping job seekers stop sending the same resume to every job[cite: 1].</strong></p>
+        <p>ResumeMatch is a free tool that takes your existing resume and a job description, and produces a tailored resume and cover letter in under two minutes — without inventing experience you don't have[cite: 1].</p>
+        <p>Users upload their resume in any format (PDF, image, or plain text), paste the job description, and receive two outputs: a rewritten resume that emphasizes the experience most relevant to that specific role, and a cover letter that explains the fit in plain, human language[cite: 1].</p>
+        <p>"I've applied to 40 jobs with the same resume," said one beta user. "This is the first time I felt like what I sent actually matched what they were asking for[cite: 1]."</p>
+        <p>ResumeMatch uses a three-model architecture: one model reads and structures your existing resume, one rewrites it against the JD, and a third writes the cover letter in a separate, appropriate register. No login required. No formatting lock-in. Just the content, ready to paste into your own template[cite: 1].</p>
+
+        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+        <h3>FAQ:</h3>
+        <p><strong>Will it make things up?</strong><br>No. LLM 2 is explicitly prompted to only reframe existing experience, not fabricate it. The output is your story, told in the right language[cite: 1].</p>
+        <p><strong>What formats can I upload?</strong><br>V1: PDF, image (JPG/PNG of a resume), plain text paste[cite: 1].</p>
+        <p><strong>Why no PDF download yet?</strong><br>Formatting is a separate problem from content. Get the words right first — the download is V2[cite: 1].</p>
+        <p><strong>Is my resume data stored?</strong><br>V1: No. Nothing is saved server-side. V2 will introduce optional login for history[cite: 1].</p>
+
         <div class="callout">
-          💡 Key insight: Write your sharpest, most specific takeaway here.
+          💡 Key architectural differentiator: Most AI resume tools use one model doing everything. The insight from the Gemini 2.5 / Defy.ai architecture splits this into three specialized sequential jobs—The Analyst (Reader/Extractor), The Resume Writer (Reframer), and The Cover Letter Copywriter (Narrator)—for separation of concerns, higher output fidelity, and easier modular model swapping down the road[cite: 1].
         </div>
 
         <!-- IMAGE ZONE -->
@@ -216,10 +267,19 @@
       <section class="cs-section" id="metrics">
         <div class="cs-section-label">Success metrics</div>
         <h2>How I'd know it's working</h2>
-        <div class="placeholder">
-          <div class="placeholder-label">✏ Edit this section</div>
-          <p>North star metric + 2–3 supporting metrics. What does success look like at 30 / 90 / 365 days? What's the counter-metric?</p>
-        </div>
+        
+        <p><strong>North star metric:</strong><br>
+        % of users who complete the full flow (upload → JD paste → view output) in a single session. Target: >60% by end of month 1[cite: 1].</p>
+        
+        <p><strong>Supporting metrics:</strong></p>
+        <ul>
+          <li><strong>Copy rate:</strong> % of users who copy the output (proxy for "this was actually useful")[cite: 1].</li>
+          <li><strong>Return rate:</strong> % of users who come back within 7 days without a login prompt (tells you whether to build persistence)[cite: 1].</li>
+          <li><strong>Session drop-off point:</strong> Where in the three-step flow do users abandon? (If they drop after upload but before JD paste, the input UX is broken)[cite: 1].</li>
+        </ul>
+
+        <p><strong>Counter-metric to watch:</strong><br>
+        <strong>Time-to-output:</strong> If the three-LLM chain takes >45 seconds, abandonment spikes regardless of output quality. Latency is a product problem, not an engineering footnote[cite: 1].</p>
 
         <!-- IMAGE ZONE -->
         <div class="img-zone" data-key="c02-metrics">
@@ -242,12 +302,15 @@
       <section class="cs-section" id="reflections">
         <div class="cs-section-label">Reflections</div>
         <h2>What I'd do differently</h2>
-        <div class="placeholder">
-          <div class="placeholder-label">✏ Edit this section</div>
-          <p>The biggest assumption baked into this product is that users trust AI-generated resume content enough to submit it. That might not be true for everyone — some users will want to edit heavily, some will want a "diff view" showing what changed and why. A V1.5 feature worth considering: show the original bullet alongside the rewritten one, so users can choose rather than just accept.
-The three-LLM architecture is also a latency risk. Chaining three models sequentially adds up. Worth exploring whether LLM 1 (the reader/extractor) can be replaced with a structured parsing layer rather than a full generation call — faster, cheaper, and more reliable for extraction tasks.
-The login + history feature sounds like a retention play but is actually a trust play. Users will only save their resumes somewhere if they trust the platform with their career data. That trust has to be earned through output quality first. Build the history feature when users ask for it — not before.</p>
-        </div>
+        <p>
+          The biggest assumption baked into this product is that users trust AI-generated resume content enough to submit it. That might not be true for everyone — some users will want to edit heavily, some will want a "diff view" showing what changed and why. A V1.5 feature worth considering: show the original bullet alongside the rewritten one, so users can choose rather than just accept[cite: 1].
+        </p>
+        <p>
+          The three-LLM architecture is also a latency risk. Chaining three models sequentially adds up. It is worth exploring whether LLM 1 (the reader/extractor) can be replaced with a structured parsing layer rather than a full generation call — faster, cheaper, and more reliable for extraction tasks[cite: 1].
+        </p>
+        <p>
+          The login + history feature sounds like a retention play but is actually a trust play. Users will only save their resumes somewhere if they trust the platform with their career data. That trust has to be earned through output quality first. Build the history feature when users ask for it — not before[cite: 1].
+        </p>
       </section>
 
     </main>
